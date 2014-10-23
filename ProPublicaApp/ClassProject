@@ -1,0 +1,38 @@
+<style type="text/css">
+
+  body {
+      width:760px;
+      margin:40px auto;
+      font-family: georgia, sans;
+  }
+
+  h1 {
+      border-bottom:1px solid #dedede;
+      margin-bottom:20px;
+      padding-bottom:20px;
+  }
+
+  </style>
+
+
+  <h1><h1 style="text-align:left;font-size:20px;clear:left">Combining the daily maximum dose of common drugs can lead to an overdose.</h1>
+  <div id="projectx" style="clear:both;">
+    <div class="article_text">
+      <div class="insert_container full_insert" id="overdose-meter" data-listener="[&quot;Dose-o-Meter&quot;]">
+  <div class="insert graphic">
+      <div class="overdose_container">
+      <div id="overdose_chart">
+        <div class="overdose_chart_item" data-num="2000">
+          <span class="overlay"></span>
+          <img src="excedrin.jpg">
+          <span class="h4">Excedrin®</span>
+          <p>Excedrin® 2000mg</p></h1>
+
+  <p>This is where HTML will go.</p>
+
+  <script type="text/javascript">
+
+  // this is how you comment in javascript.
+    console.log("this is where javascript will go!");
+
+  </script>
