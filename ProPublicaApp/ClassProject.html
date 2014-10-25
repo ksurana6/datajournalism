@@ -15,24 +15,76 @@
   </style>
 
 
-  <h1><h1 style="text-align:left;font-size:20px;clear:left">Combining the daily maximum dose of common drugs can lead to an overdose.</h1>
-  <div id="projectx" style="clear:both;">
-    <div class="article_text">
-      <div class="insert_container full_insert" id="overdose-meter" data-listener="[&quot;Dose-o-Meter&quot;]">
-  <div class="insert graphic">
-      <div class="overdose_container">
-      <div id="overdose_chart">
-        <div class="overdose_chart_item" data-num="2000">
-          <span class="overlay"></span>
-          <img src="excedrin.jpg">
-          <span class="h4">Excedrin®</span>
-          <p>Excedrin® 2000mg</p></h1>
-
   <p>This is where HTML will go.</p>
 
-  <script type="text/javascript">
 
-  // this is how you comment in javascript.
-    console.log("this is where javascript will go!");
+
+ <p> <img src= "file:///Users/ksurana/GitHub/datajournalism/ProPublicaApp/IMAGES/alkaseltzer.jpg" data-dose=2000>
+
+  <img src= "file:///Users/ksurana/GitHub/datajournalism/ProPublicaApp/IMAGES/anacin.jpg" data-dose=4000>
+
+  <img src= "file:///Users/ksurana/GitHub/datajournalism/ProPublicaApp/IMAGES/coricidin.jpg" data-dose=3900>
+
+  <img src= "file:///Users/ksurana/GitHub/datajournalism/ProPublicaApp/IMAGES/dayquil.jpg" data-dose=1300> 
+
+    <img src= "file:///Users/ksurana/GitHub/datajournalism/ProPublicaApp/IMAGES/dimetapp.jpg" data-dose=800> </p>
+
+  <p> <img src= "file:///Users/ksurana/GitHub/datajournalism/ProPublicaApp/IMAGES/excedrin.jpg"data-dose=2000>
+
+  <img src= "file:///Users/ksurana/GitHub/datajournalism/ProPublicaApp/IMAGES/hydrocodone.jpg" data-dose=3900>
+
+  <img src= "file:///Users/ksurana/GitHub/datajournalism/ProPublicaApp/IMAGES/nyquil.jpg" data-dose=2600> 
+
+  <img src= "file:///Users/ksurana/GitHub/datajournalism/ProPublicaApp/IMAGES/oxycodone.jpg" data-dose=3900>
+
+  <img src= "file:///Users/ksurana/GitHub/datajournalism/ProPublicaApp/IMAGES/panadol.jpg" data-dose=800> </p>
+
+  <p> <img src= "file:///Users/ksurana/GitHub/datajournalism/ProPublicaApp/IMAGES/percoset.jpg" data-dose=3900>
+
+  <img src= "file:///Users/ksurana/GitHub/datajournalism/ProPublicaApp/IMAGES/robitussin.jpg" data-dose=3840>
+
+  <img src= "file:///Users/ksurana/GitHub/datajournalism/ProPublicaApp/IMAGES/sudafed.jpg" data-dose=3250>
+
+ <img src= "file:///Users/ksurana/GitHub/datajournalism/ProPublicaApp/IMAGES/theraflu.jpg" data-dose=3900>
+
+  <img src= "file:///Users/ksurana/GitHub/datajournalism/ProPublicaApp/IMAGES/tylenolextrastrngth.jpg" data-dose=3000> </p>
+
+  <p> <img src= "file:///Users/ksurana/GitHub/datajournalism/ProPublicaApp/IMAGES/tylenolwcodeine.jpg" data-dose=4000>
+
+  <img src= "file:///Users/ksurana/GitHub/datajournalism/ProPublicaApp/IMAGES/ultracet.jpg" data-dose=2600>
+
+  <img src= "file:///Users/ksurana/GitHub/datajournalism/ProPublicaApp/IMAGES/vicodin.jpg" data-dose=3960>
+
+  <img src= "file:///Users/ksurana/GitHub/datajournalism/ProPublicaApp/IMAGES/zicam.jpg" data-dose=3900> </p>
+
+  
+  
+<script type="text/javascript" src="jquery-2.1.1.min.js"></script>
+<script type="text/javascript">
+$=jQuery;
+var totaldosage=0;
+var maxdaily=4000;
+var liverdamage=8000;
+var toxic=16000;
+
+$("img").click(function() {
+  var thisdose=($( this ).data('dose'))
+  console.log(thisdose)
+  totaldosage=totaldosage+thisdose;
+  console.log(totaldosage);
+
+  if (totaldosage>4000) {
+    console.log ("you have exceeded maximum limit") 
+  };
+
+  if (totaldosage>8000) {
+    console.log ("you have liver damage") 
+  };
+
+  if (totaldosage>16000) {
+    console.log ("you are probably dead") 
+  };
+//  alert( "I like monkeys!!!." );
+});
 
   </script>
