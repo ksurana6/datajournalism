@@ -1,0 +1,90 @@
+<style type="text/css">
+
+  body {
+      width:760px;
+      margin:40px auto;
+      font-family: georgia, sans;
+  }
+
+  h1 {
+      border-bottom:1px solid #dedede;
+      margin-bottom:20px;
+      padding-bottom:20px;
+  }
+
+  </style>
+
+
+  <p>Kavitha Project</p>
+
+
+
+ <p> <img src= "file:///Users/ksurana/GitHub/datajournalism/ProPublicaApp/IMAGES/alkaseltzer.jpg" data-dose=2000>
+
+  <img src= "file:///Users/ksurana/GitHub/datajournalism/ProPublicaApp/IMAGES/anacin.jpg" data-dose=4000>
+
+  <img src= "file:///Users/ksurana/GitHub/datajournalism/ProPublicaApp/IMAGES/coricidin.jpg" data-dose=3900>
+
+  <img src= "file:///Users/ksurana/GitHub/datajournalism/ProPublicaApp/IMAGES/dayquil.jpg" data-dose=1300> 
+
+    <img src= "file:///Users/ksurana/GitHub/datajournalism/ProPublicaApp/IMAGES/dimetapp.jpg" data-dose=800> </p>
+
+  <p> <img src= "file:///Users/ksurana/GitHub/datajournalism/ProPublicaApp/IMAGES/excedrin.jpg"data-dose=2000>
+
+  <img src= "file:///Users/ksurana/GitHub/datajournalism/ProPublicaApp/IMAGES/hydrocodone.jpg" data-dose=3900>
+
+  <img src= "file:///Users/ksurana/GitHub/datajournalism/ProPublicaApp/IMAGES/nyquil.jpg" data-dose=2600> 
+
+  <img src= "file:///Users/ksurana/GitHub/datajournalism/ProPublicaApp/IMAGES/oxycodone.jpg" data-dose=3900>
+
+  <img src= "file:///Users/ksurana/GitHub/datajournalism/ProPublicaApp/IMAGES/panadol.jpg" data-dose=800> </p>
+
+  <p> <img src= "file:///Users/ksurana/GitHub/datajournalism/ProPublicaApp/IMAGES/percoset.jpg" data-dose=3900>
+
+  <img src= "file:///Users/ksurana/GitHub/datajournalism/ProPublicaApp/IMAGES/robitussin.jpg" data-dose=3840>
+
+  <img src= "file:///Users/ksurana/GitHub/datajournalism/ProPublicaApp/IMAGES/sudafed.jpg" data-dose=3250>
+
+ <img src= "file:///Users/ksurana/GitHub/datajournalism/ProPublicaApp/IMAGES/theraflu.jpg" data-dose=3900>
+
+  <img src= "file:///Users/ksurana/GitHub/datajournalism/ProPublicaApp/IMAGES/tylenolextrastrngth.jpg" data-dose=3000> </p>
+
+  <p> <img src= "file:///Users/ksurana/GitHub/datajournalism/ProPublicaApp/IMAGES/tylenolwcodeine.jpg" data-dose=4000>
+
+  <img src= "file:///Users/ksurana/GitHub/datajournalism/ProPublicaApp/IMAGES/ultracet.jpg" data-dose=2600>
+
+  <img src= "file:///Users/ksurana/GitHub/datajournalism/ProPublicaApp/IMAGES/vicodin.jpg" data-dose=3960>
+
+  <img src= "file:///Users/ksurana/GitHub/datajournalism/ProPublicaApp/IMAGES/zicam.jpg" data-dose=3900> </p>
+
+  
+  
+<script type="text/javascript" src="jquery-2.1.1.min.js"></script>
+<script type="text/javascript">
+$=jQuery;
+var totaldosage=0;
+var maxdaily=4000;
+var liverdamage=8000;
+var toxic=16000;
+
+$("img").click(function() {
+  var thisdose=($( this ).data('dose'))
+  console.log(thisdose)
+  totaldosage=totaldosage+thisdose;
+  console.log(totaldosage);
+
+  if (totaldosage>4000) {
+    console.log ("you have exceeded maximum limit") 
+  };
+
+  if (totaldosage>8000) {
+    console.log ("you have liver damage") 
+  };
+
+  if (totaldosage>16000) {
+    console.log ("you are probably dead") 
+  };
+//  alert( "I like monkeys!!!." );
+});
+
+  </script>
