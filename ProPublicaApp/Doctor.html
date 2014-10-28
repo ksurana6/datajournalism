@@ -1,0 +1,90 @@
+<style type="text/css">
+
+  body {
+      width:760px;
+      margin:40px auto;
+      font-family: georgia, sans;
+  }
+
+  h1 {
+      border-bottom:1px solid #dedede;
+      margin-bottom:20px;
+      padding-bottom:20px;
+  }
+
+  </style>
+
+
+  <p>Kavitha Project</p>
+
+
+
+ <p> <img src= "https://dl.dropboxusercontent.com/u/63498355/alkaseltzer.jpg" data-dose=2000>
+
+  <img src= "https://dl.dropboxusercontent.com/u/63498355/anacin.jpg" data-dose=4000>
+
+  <img src= "https://dl.dropboxusercontent.com/u/63498355/coricidin.jpg" data-dose=3900>
+
+  <img src= "https://dl.dropboxusercontent.com/u/63498355/dayquil.jpg" data-dose=1300> 
+
+    <img src= "https://dl.dropboxusercontent.com/u/63498355/dimetapp.jpg" data-dose=800> </p>
+
+  <p> <img src= "https://dl.dropboxusercontent.com/u/63498355/excedrin.jpg"data-dose=2000>
+
+  <img src= "https://dl.dropboxusercontent.com/u/63498355/hydrocodone.jpg" data-dose=3900>
+
+  <img src= "https://dl.dropboxusercontent.com/u/63498355/nyquil.jpg" data-dose=2600> 
+
+  <img src= "https://dl.dropboxusercontent.com/u/63498355/oxycodone.jpg" data-dose=3900>
+
+  <img src= "https://dl.dropboxusercontent.com/u/63498355/panadol.jpg" data-dose=800> </p>
+
+  <p> <img src= "https://dl.dropboxusercontent.com/u/63498355/percoset.jpg" data-dose=3900>
+
+  <img src= "https://dl.dropboxusercontent.com/u/63498355/robitussin.jpg" data-dose=3840>
+
+  <img src= "https://dl.dropboxusercontent.com/u/63498355/sudafed.jpg" data-dose=3250>
+
+ <img src= "https://dl.dropboxusercontent.com/u/63498355/theraflu.jpg" data-dose=3900>
+
+  <img src= "https://dl.dropboxusercontent.com/u/63498355/tylenolextrastrngth.jpg" data-dose=3000> </p>
+
+  <p> <img src= "https://dl.dropboxusercontent.com/u/63498355/tylenolwcodeine.jpg" data-dose=4000>
+
+  <img src= "https://dl.dropboxusercontent.com/u/63498355/ultracet.jpg" data-dose=2600>
+
+  <img src= "https://dl.dropboxusercontent.com/u/63498355/vicodin.jpg" data-dose=3960>
+
+  <img src= "https://dl.dropboxusercontent.com/u/63498355//zicam.jpg" data-dose=3900> </p>
+
+  
+  
+<script type="text/javascript" src="jquery-2.1.1.min.js"></script>
+<script type="text/javascript">
+$=jQuery;
+var totaldosage=0;
+var maxdaily=4000;
+var liverdamage=8000;
+var toxic=16000;
+
+$("img").click(function() {
+  var thisdose=($( this ).data('dose'))
+  console.log(thisdose)
+  totaldosage=totaldosage+thisdose;
+  console.log(totaldosage);
+
+  if (totaldosage>4000) {
+    console.log ("you have exceeded maximum limit") 
+  };
+
+  if (totaldosage>8000) {
+    console.log ("you have liver damage") 
+  };
+
+  if (totaldosage>16000) {
+    console.log ("you are probably dead") 
+  };
+//  alert( "I like monkeys!!!." );
+});
+
+  </script>
