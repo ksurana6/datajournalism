@@ -1,0 +1,151 @@
+
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="stylesheet" href="css/normalize.css">
+        <link rel="stylesheet" href="css/main.css">
+        
+        <script src="js/vendor/modernizr-2.6.2.min.js"></script>
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+
+        <div>
+            <h1>How Much Acetaminophen Are You Taking?</h1>
+        </div>
+
+        <div id="painkillers"></div>
+
+        <div id="information">
+            <h3>TOTAL</h3>
+            <h2 id="results"></h2>
+            <h4>milligrams</h4>
+            <p id="description"></p>
+        </div>        
+
+
+        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.2.min.js"><\/script>')</script>
+        <script src="js/plugins.js"></script>
+        <script src="js/main.js"></script>
+
+
+        <script type="text/javascript">
+
+        function init() {
+            $.getJSON('assets/data.json', function(data) {
+
+                data.forEach(function(d) {
+                    $('#painkillers').append(
+                        '<div class="item">'+
+                            '<span class="default"></span>'+
+                            '<img data-dose="'+ d.dose +'" src="'+ d.image_url +'" />'+    
+                            '<p class="label">'+ d.name +'</p>'+
+                        '</div>'
+                        );
+                });
+
+
+                var image = $('img');
+                var description = $('#description');
+                var dose = 0;
+
+
+                function doseText(doseAmount) {
+                    if (doseAmount > 15000) {
+                        return "You've exceeded the threshold toxic dose of acetaminophen. A single dose at this level can result in death, according to medical experts and literature.";
+                    } else if (doseAmount === 15000) {
+                        return "You've reached the threshold toxic dose of acetaminophen. A single dose at this level can result in death, according to medical experts and literature.";
+                    } else if (doseAmount > 8000) {
+                        return "You've exceeded the level at which liver damage can occur if taken for several days, according to McNeil, the maker of Tylenol.";
+                    } else if (doseAmount === 8000) {
+                        return "You've reached the amount at which liver damage can occur if taken for several days, according to McNeil, the maker of Tylenol.";
+                    } else if (doseAmount > 4000) {
+                        return "You've exceeded the FDA’s recommended maximum daily limit of acetaminophen.";
+                    } else if (doseAmount === 4000) {
+                        return "You've reached the FDA’s recommended maximum daily limit of acetaminophen.";
+                    } else {
+                        return ""; 
+                    }
+                };
+
+                function changeColor(doseAmount) {
+                    if (+doseAmount >= 15000) {
+                        $('#results').css('color', '#c20803');
+                    } else if (+doseAmount >= 8000) {
+                        $('#results').css('color', '#d17828');
+                    } else if (+doseAmount >= 4000) {
+                        $('#results').css('color', '#d5b612');
+                    } else {
+                        $('#results').css('color', 'black');
+                    }
+                };
+
+                $('.item').on('click', function(d) {
+
+                    $(this).toggleClass('selected');
+                    // $(this).find('span').addClass('overlay');
+                    // $(this).find('p').addClass('show');
+
+                    if ($(this).hasClass('selected')) {
+
+                        dose += +($(this).find('img').attr('data-dose'));
+
+                        $('#results').html(dose);
+                        $('#description').html(doseText(dose));
+
+                        changeColor(dose);
+
+                    } else {
+
+                        dose -= +($(this).find('img').attr('data-dose'));
+                        
+                        $('#results').html(dose);
+                        $('#description').html(doseText(dose));
+
+                        changeColor(dose);
+ 
+                    }
+
+                    
+
+                })
+                .on('mouseenter', function(d) {
+                    $(this).addClass('hover');
+                    $(this).find('span').addClass('overlay');
+                    $(this).find('.label').addClass('show');
+
+                })
+                .on('mouseleave', function(){
+                    $(this).removeClass('hover');
+                    $(this).find('span').removeClass('overlay');
+                    $(this).find('.label').removeClass('show');
+                })
+                ;
+
+
+            });
+
+            
+            
+
+
+
+
+        }
+            
+        $(document).ready(init);
+
+        </script>
+    </body>
+</html>
